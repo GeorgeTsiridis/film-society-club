@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <div class="w-100"
+         fxLayout="row"
+         fxLayoutAlign="space-between center">
+        <h2>
+            <a class="logo" routerLink="/">Movie Finder</a>
+        </h2>
+        <div class="flex-stretch"></div>
+        <mat-icon class="me-2">brightness_5</mat-icon>
+        <mat-slide-toggle [formControl]="toggleControl" class="me-2" >
+        </mat-slide-toggle>
+        <mat-icon>bedtime</mat-icon>
+    </div>
+</mat-toolbar>

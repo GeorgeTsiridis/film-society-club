@@ -1,0 +1,64 @@
+<!-- Moved Header to App Component in order to implement dark mode -->
+<!-- <app-header></app-header> -->
+
+<mat-toolbar class="mat-elevation-z10"
+             color="primary"
+             fxLayout="row">
+  <div>
+    <h2>
+      <a class="logo"
+         [routerLink]="['/']">
+        The Film Society Club
+      </a>
+    </h2>
+  </div>
+  <div fxFlex
+       fxLayout="row"
+       fxLayoutAlign="flex-end"
+       fxHide.xs>
+    <ul fxLayout
+        fxLayoutGap="20px"
+        class="menu-items">
+      <li><a [routerLink]="['/favorites']">Favorites</a></li>
+      <li><a [routerLink]="['/watched-list']">WatchedList</a></li>
+      <li class="d-flex pt-1">
+        <mat-icon class="me-2">brightness_5</mat-icon>
+        <mat-slide-toggle [formControl]="toggleControl"
+                          class="me-2 mt-0">
+        </mat-slide-toggle>
+        <mat-icon>bedtime</mat-icon>
+      </li>
+    </ul>
+  </div>
+  <div fxFlex
+       fxLayout="row"
+       fxLayoutAlign="flex-end"
+       fxHide.gt-xs>
+    <a class="valign-center"
+       mat-icon-button
+       [matMenuTriggerFor]="menu"
+       aria-label="additional links">
+      <mat-icon>more_vert</mat-icon>
+    </a>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item
+              [routerLink]="['/favorites']">Favorites</button>
+      <button mat-menu-item
+              [routerLink]="['/watched-list']">WatchedList</button>
+              <div class="d-flex ps-1">
+                <mat-icon class="me-2">brightness_5</mat-icon>
+                <mat-slide-toggle [formControl]="toggleControl"
+                                  class="me-2">
+                </mat-slide-toggle>
+                <mat-icon>bedtime</mat-icon>
+              </div>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+
+<div class="row g-0 overflow-auto mat-app-background"
+     style="height: calc(100% - 65px);">
+  <div class="col-12 h-100">
+    <router-outlet></router-outlet>
+  </div>
+</div>

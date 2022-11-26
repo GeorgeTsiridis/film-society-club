@@ -1,0 +1,87 @@
+<div class="row h-100 g-0">
+    <div style="position: fixed;top: 0;left: 0;height: 4px; width: 100%;">
+        <mat-progress-bar *ngIf="isLoading"
+                          mode="indeterminate"
+                          color="accent"></mat-progress-bar>
+    </div>
+    <div class="col-12">
+        <div class="row g-0 px-4 pt-4">
+            <div class="col-12">
+                <div class="w-100"
+                     fxLayout="row"
+                     fxLayoutAlign="start center">
+                    <button mat-raised-button
+                            color="primary"
+                            routerLink="/">
+                        <mat-icon aria-hidden="false"
+                                  aria-label="Example home icon"
+                                  fontIcon="arrow_left"></mat-icon>
+                        Go Back
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- MOVIE INFO -->
+        <div class="row g-0">
+            <div class="col-12 p-4">
+                <mat-card class="mat-elevation-z4 px-3">
+                    <mat-card-content>
+                        <div class="row g-0">
+                            <div class="col-md-6 col-sm-12">
+                                <img src={{movie?.Poster}}
+                                     alt={{movie?.Title}}
+                                     height="500"
+                                     width="340">
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="row d-flex h-100 text-center">
+                                    <div fxLayout="column"
+                                         fxLayoutAlign="space-between center">
+                                        <h2>{{movie?.Title}}</h2>
+                                        <div>
+                                            <label><span class="info-title">Year: </span>{{movie?.Year}}</label>
+                                        </div>
+                                        <div>
+                                            <label><span class="info-title">Type: </span>{{movie?.Type}}</label>
+                                        </div>
+                                        <div>
+                                            <label><span class="info-title">Actors: </span>{{movie?.Actors}}</label>
+                                        </div>
+                                        <div>
+                                            <label><span class="info-title">Director: </span>{{movie?.Director}}</label>
+                                        </div>
+                                        <div>
+                                            <label><span class="info-title">Writer: </span>{{movie?.Writer}}</label>
+                                        </div>
+                                        <div>
+                                            <label><span class="info-title">Genre: </span>{{movie?.Genre}}</label>
+                                        </div>
+                                        <div>
+                                            <label><span class="info-title">Language: </span>{{movie?.Language}}</label>
+                                        </div>
+                                        
+                                        <div>
+                                            <label><span class="info-title">Released: </span>{{movie?.Released}}</label>
+                                        </div>
+                                        <div>
+                                            <label><span class="info-title">Plot: </span>{{movie?.Plot}}</label>
+                                        </div>
+                                        <div *ngIf="movie?.Ratings">
+                                            <label class="info-title">Ratings:</label>
+                                            <div *ngFor="let rating of movie?.Ratings">
+                                                <label><span class="info-title">{{rating?.Source}}: </span>{{rating?.Value}}</label>
+                                            </div>
+                                        </div>
+                                        <app-movie-utils [movie]="movie"></app-movie-utils>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+
+</div>

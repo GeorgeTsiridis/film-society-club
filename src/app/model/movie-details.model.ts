@@ -1,0 +1,28 @@
+export interface MovieDetails {
+    Actors: string | undefined;
+    Awards: string | undefined;
+    BoxOffice: string | undefined;
+    Country: string | undefined;
+    DVD: string | undefined;
+    Director: string | undefined;
+    Genre: string | undefined;
+    Language: string | undefined;
+    Metascore: string | undefined;
+    Plot: string | undefined;
+    Poster: string | undefined;
+    Production: string | undefined;
+    Rated: string | undefined;
+    Ratings: any[] | undefined;
+    Released: string | undefined;
+    Response: string | undefined;
+    Runtime: string | undefined;
+    Title: string | undefined;
+    Type: string | undefined;
+    Website: string | undefined;
+    Writer: string | undefined;
+    Year: string | undefined;
+    imdbID: string | undefined;
+    imdbRating: string | undefined;
+    imdbVotes: string | undefined;
+    Error: string | undefined;
+}

@@ -1,0 +1,12 @@
+<button mat-icon-button
+        (click)="toggleFavorites(movie)"
+        [matTooltip]="!existsInFavorites(movie) ? 'Add to Favorites' : 'Remove from Favorites'">
+    <mat-icon [ngClass]="existsInFavorites(movie) ? 'favorite' : 'favorite_border'"
+              aria-label="favorite-button">
+        {{ existsInFavorites(movie) ? 'favorite' : 'favorite_border'}}
+    </mat-icon>
+</button>
+<mat-checkbox color="primary"
+              [matTooltip]="!existsInWatched(movie) ? 'Add to WatchedList' : 'Remove from WatchedList'"
+              (change)="toggleWatched(movie)"
+              [checked]="existsInWatched(movie)"></mat-checkbox>
