@@ -3,6 +3,9 @@ The Film Society Club
 
 Angular Project working with a 3rd-Party API (http://www.omdbapi.com/) for searching Movies!
 
+You can find a live version of the application here: https://georgetsiridis.github.io/
+
+
 Run nmp install to install all the necessary depedencies.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6 (Node V16.13.0).
@@ -39,6 +42,8 @@ The dark mode is also implemented with Material Theming.
 
 I also used the localStorage for saving the user's preference for dark theme but also for saving the favorites and watched movies list.
 
-My main issue would be some configurations with the API, since some parameters won't work as expected or the default value would be different (for example some strings would take the dafault "" for empty value for strings but some others needed "empty" as an empty string). It also took me a while to figure out the data type that each API call returns, but since that got out of the way, i made my classes and interfaces so i could easily manipulate the data and their types.
+My main issue would be some configurations with the API, since some parameters won't work as expected or the default value would be different (for example some strings would take the default "" for empty value strings but some others needed the value "empty" as an empty string). It also took me a while to figure out the data type that each API call returns, but since that got out of the way, I made my classes and interfaces so I could easily manipulate the data and their types.
 
-I tried to make some shared components, such as the movie-utils, but I would might try to add one more just to make a little bit more shared the 3 lists and clean up the code.
+Another tricky part was the deployment in the Github Pages. Since this is an angular app it needs a small amount of modifications in order to build it succesfully, but thankfully there is enough documentation for this process online so in the end everything went smoothly!
+
+I tried to make some shared components, such as the movie-utils, but for further improvement I would might try to add another one, just to make a little bit more shared the 3 lists and clean up the code even more. Not a really needed change for such a project but still always a good practice to keep in mind!
