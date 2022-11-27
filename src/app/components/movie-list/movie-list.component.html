@@ -1,5 +1,5 @@
 <div class="container-fluid h-100 g-0">
-    <div style="position: fixed;top: 0;left: 0;height: 4px; width: 100%;">
+    <div class="progress-bar">
         <mat-progress-bar *ngIf="isLoading"
                           mode="indeterminate"
                           color="accent"></mat-progress-bar>
@@ -79,7 +79,7 @@
                                         <button mat-raised-button
                                                 color="primary"
                                                 (click)="goToDetails(movie.imdbID)">
-                                            See more
+                                            Details
                                             <mat-icon aria-hidden="false"
                                                       aria-label="Example home icon"
                                                       fontIcon="info"></mat-icon>

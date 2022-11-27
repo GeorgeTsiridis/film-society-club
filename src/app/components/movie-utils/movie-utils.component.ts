@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Movie } from 'src/app/model/movie.model';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 
@@ -19,7 +20,8 @@ export class MovieUtilsComponent implements OnInit {
   public updateWatchedEvent = new EventEmitter<boolean>();
 
   constructor(
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void { }
@@ -32,8 +34,10 @@ export class MovieUtilsComponent implements OnInit {
       }
       if (this.existsInFavorites(movie)) {
         favorites.splice(favorites.findIndex(f => f.imdbID === movie.imdbID), 1);
+        this.toastr.info(movie.Title + ' removed from Favorites!');
       } else {
         favorites.push(movie);
+        this.toastr.success(movie.Title + ' added to Favorites!');
       }
       this.localStorageService.set('favorites', favorites);
       this.updateFavoritesEvent.emit(true);
@@ -57,8 +61,10 @@ export class MovieUtilsComponent implements OnInit {
       }
       if (this.existsInWatched(movie)) {
         watched.splice(watched.findIndex(w => w.imdbID === movie.imdbID), 1);
+        this.toastr.info(movie.Title + ' removed from WatchedList!');
       } else {
         watched.push(movie);
+        this.toastr.success(movie.Title + ' added to Favorites!');
       }
       this.localStorageService.set('watched', watched);
       this.updateWatchedEvent.emit(true);

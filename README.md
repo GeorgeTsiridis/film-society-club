@@ -1,7 +1,7 @@
 # film-society-club
 The Film Society Club
 
-Angular Project working with a 3rd-Party API for searching a Movie DB!
+Angular Project working with a 3rd-Party API (http://www.omdbapi.com/) for searching Movies!
 
 Run nmp install to install all the necessary depedencies.
 
@@ -31,7 +31,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Bried Documentation
 
-I used mainly Angular Material for css theming and ui controls.
+I used mainly Angular Material for css theming and UI controls.
 
 The dark mode is also implemented with Material Theming.
+
+I also used the localStorage for saving the user's preference for dark theme but also for saving the favorites and watched movies list.
+
+My main issue would be some configurations with the API, since some parameters won't work as expected or the default value would be different (for example some strings would take the dafault "" for empty value for strings but some others needed "empty" as an empty string). It also took me a while to figure out the data type that each API call returns, but since that got out of the way, i made my classes and interfaces so i could easily manipulate the data and their types.
+
+I tried to make some shared components, such as the movie-utils, but I would might try to add one more just to make a little bit more shared the 3 lists and clean up the code.
