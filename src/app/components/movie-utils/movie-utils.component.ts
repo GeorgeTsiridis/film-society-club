@@ -64,7 +64,7 @@ export class MovieUtilsComponent implements OnInit {
         this.toastr.info(movie.Title + ' removed from WatchedList!');
       } else {
         watched.push(movie);
-        this.toastr.success(movie.Title + ' added to Favorites!');
+        this.toastr.success(movie.Title + ' added to WatchedList!');
       }
       this.localStorageService.set('watched', watched);
       this.updateWatchedEvent.emit(true);
